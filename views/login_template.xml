@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <template id="custom_login_branding" inherit_id="web.login" name="Remove Odoo Footer and Add Welcome Message">
-    <xpath expr="." position="inside">
+  <template id="custom_login_branding" inherit_id="web.login_layout" name="Custom Login Branding Odoo 18">
 
-      <!-- Eliminar el texto 'Con la tecnología de Odoo' -->
-      <t t-jquery="div.border-top.text-center.small.mt-4.pt-3" t-operation="replace">
-        <div/>
-      </t>
-
-      <!-- Agregar un mensaje arriba del formulario -->
-      <t t-jquery="form.oe_login_form" t-operation="prepend">
-        <div class="alert alert-info text-center mb-3">
-          ¡Bienvenido a <strong>DOWE</strong>!
-        </div>
-      </t>
-
+    <!-- Quitar footer de Odoo -->
+    <xpath expr="//div[contains(@class, 'border-top') and contains(., 'Odoo')]" position="replace">
+      <div/>
     </xpath>
+
+    <!-- Insertar mensaje arriba del formulario -->
+    <xpath expr="//form[contains(@class, 'oe_login_form')]" position="before">
+      <div class="alert alert-info text-center mb-3">
+        ¡Bienvenido a <strong>DOWE</strong> - Gestion Empresarial!
+      </div>
+    </xpath>
+
   </template>
 </odoo>
