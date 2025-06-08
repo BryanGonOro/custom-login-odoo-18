@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <template id="custom_login_branding" inherit_id="web.login" name="Remove Odoo Footer & Add Welcome Message">
+  <template id="custom_login_branding" inherit_id="web.login" name="Remove Odoo Footer and Add Welcome Message">
     <xpath expr="." position="inside">
 
       <!-- Eliminar el texto 'Con la tecnología de Odoo' -->
