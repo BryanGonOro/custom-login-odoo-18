@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <template id="remove_odoo_branding" inherit_id="web.login" name="Remove Odoo Footer with jQuery">
+  <!-- Heredamos la vista de login -->
+  <template id="remove_odoo_branding" inherit_id="web.login" name="Remove Odoo Footer and Add Welcome Text">
+    
+    <!-- Eliminamos el footer con jQuery -->
     <xpath expr="." position="inside">
-      <t t-jquery="div.text-center.small.border-top a[href*='odoo.com']" t-operation="replace">
-        <!-- Eliminado -->
+      <t t-jquery="div.o_footer, div.text-center.small.border-top" t-operation="replace">
+        <!-- Footer eliminado -->
+        <div/>
+      </t>
+
+      <!-- Insertamos mensaje personalizado antes del formulario -->
+      <t t-jquery="form.oe_login_form" t-operation="prepend">
+        <div class="alert alert-info text-center mb-3">
+          ¡Bienvenido a DOWE - Gestion restaurantes!
+        </div>
       </t>
     </xpath>
+
   </template>
 </odoo>
