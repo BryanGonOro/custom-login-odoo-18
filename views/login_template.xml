@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <template id="remove_odoo_footer" inherit_id="web.login" name="Custom Login Branding">
-    
+  <!-- Hereda la vista web.login -->
+  <template id="custom_login_branding" inherit_id="web.login" name="Custom Login Branding Odoo 18">
     <xpath expr="." position="inside">
-      <!-- Oculta el texto "Con la tecnología de Odoo" -->
-      <t t-jquery="div.border-top a[href*='odoo.com']" t-operation="replace">
+      <!-- Elimina el footer con "Powered by Odoo" -->
+      <t t-jquery="div[class*='border-top'] a[href*='odoo.com']" t-operation="replace">
         <div/>
       </t>
-
-      <!-- Agrega mensaje de bienvenida -->
+      <!-- Añade mensaje personalizado al inicio del formulario -->
       <t t-jquery="form.oe_login_form" t-operation="prepend">
         <div class="alert alert-info text-center mb-3">
-          ¡Bienvenido a <strong>DOWE</strong>!
+          ¡Bienvenido a <strong>SGV Digital</strong>!
         </div>
       </t>
     </xpath>
-
   </template>
 </odoo>
