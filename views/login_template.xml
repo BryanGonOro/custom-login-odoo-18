@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <template id="custom_login_branding" inherit_id="web.login_layout" name="Custom Login Branding Odoo 18">
-
-    <!-- Quitar footer de Odoo -->
+  <template id="remove_odoo_footer" inherit_id="web.login_layout" name="Remove Footer Odoo">
     <xpath expr="//div[contains(@class, 'border-top') and contains(., 'Odoo')]" position="replace">
       <div/>
     </xpath>
-
-    <!-- Insertar mensaje arriba del formulario -->
-    <xpath expr="//form[contains(@class, 'oe_login_form')]" position="before">
-      <div class="alert alert-info text-center mb-3">
-        ¡Bienvenido a <strong>DOWE</strong> - Gestion Empresarial!
-      </div>
-    </xpath>
-
   </template>
 </odoo>

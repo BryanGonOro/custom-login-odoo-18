@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="welcome_message_sgv" inherit_id="web.login" name="Add Welcome Message">
+    <xpath expr="//form[contains(@class, 'oe_login_form')]" position="before">
+      <div class="alert alert-info text-center mb-3">
+        ¡Bienvenido a <strong>DOWE</strong> - Gestión Empresarial!
+      </div>
+    </xpath>
+  </template>
+</odoo>
