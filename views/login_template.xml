@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <template id="remove_odoo_footer" inherit_id="web.login" name="Remove Odoo Branding">
-    <xpath expr="//div[contains(@class, 'mt-4') and contains(., 'Odoo')]" position="replace">
-      <!-- Footer eliminado -->
+  <template id="remove_odoo_branding" inherit_id="web.login" name="Remove Odoo Footer with jQuery">
+    <xpath expr="." position="inside">
+      <t t-jquery="div.text-center.small.border-top a[href*='odoo.com']" t-operation="replace">
+        <!-- Eliminado -->
+      </t>
     </xpath>
   </template>
 </odoo>
